@@ -2,22 +2,30 @@
     import { ref } from "vue";
 
     const popUpOpen = ref(false);
+    let audio = new Audio('src/assets/the_coconut_song.mp3');
+
+    const togglePopUp = ()=> {
+      popUpOpen.value = false;
+    }
+
+    const startMusic = ()=> {
+      audio.play();
+    }
 
     setTimeout(() => {
       popUpOpen.value = true;
-    }, 5000);
+    }, 3000);
 
 </script>
 
 <template> 
-  <div>
+  <div @mousemove="startMusic()">
     <dialog v-show="popUpOpen" class="dialog" :open="popUpOpen"> 
       <h1>Tak for dine data.</h1>
       <p>
-        De vil nu blive uploadet hvis du ikke fylder 4 kasser Underberg i de kreatives køleskab.
-        Dine data indeholder, billeder mails og andet nasty fra din computer, samt seneste søgehistorik. bla. happyslapping
+        De vil nu blive uploadet til det russiske dark web og solgt til højstbydende i cococoins, hvis du ikke fylder 4 kasser Underberg i de kreatives køleskab. Og det gælder alle dine data – også søgehistorikken. ”Happyslapping Nr. Aaby” – really, Richard?
       </p>
-      <button @click="popUpOpen = false">OK</button>
+      <button @click="togglePopUp">OK</button>
     </dialog>
     <img src="./assets/www.png" alt="www" width="400" />
     <h1>Nedtælling til næste snestorm - hvis ikke der er ryddet op inden</h1>
@@ -28,6 +36,9 @@
       countdownSize="10rem"
       deadlineISO="2022-01-20T08:00:00.000Z"
     />
+    <audio ref="musicPlayer" autoplay loop >
+      <source src="./assets/the_coconut_song.mp3" type="audio/mpeg">
+    </audio>
   </div>
 </template>
 
@@ -56,16 +67,19 @@ h1 {
 }
 
 .dialog{
-  width: 600px;
+  width: 60%;
   background-color: white;
   border-radius: 2rem;
   position: absolute;
-  top:22rem;
+  top:16rem;
   margin: auto;
   left: 0;
   right: 0;
   text-align: center;
-  padding: 2rem;
+  padding: 5rem;
   z-index: 999;
+} 
+p {
+    font-size: 18px;
 }
 </style>
