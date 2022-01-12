@@ -2,7 +2,7 @@
     import { ref } from "vue";
 
     const popUpOpen = ref(false);
-    let audio = new Audio('/assets/the_coconut_song.mp3');
+    let audio = new Audio('/the_coconut_song.mp3');
 
     const togglePopUp = ()=> {
       popUpOpen.value = false;
