@@ -1,21 +1,17 @@
 <script setup>
-    import { onMounted, ref } from "vue";
+    import { ref } from "vue";
+
     const popUpOpen = ref(false);
 
-    const popUp = () => {
-      setTimeout(() => {
-        popUpOpen.value = true;
-      }, 5000);
-    };
+    setTimeout(() => {
+      popUpOpen.value = true;
+    }, 5000);
 
-    onMounted(() => {
-      popUp();
-    });
 </script>
 
 <template> 
   <div>
-    <dialog v-show="popUpOpen" class="dialog">
+    <dialog v-show="popUpOpen" class="dialog" :open="popUpOpen"> 
       <h1>Tak for dine data.</h1>
       <p>
         De vil nu blive uploadet hvis du ikke fylder 4 kasser Underberg i de kreatives køleskab.
