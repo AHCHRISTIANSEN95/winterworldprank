@@ -22,7 +22,7 @@ export default {
 </script>
 
 <template> 
-  <div v-if="false">
+  <div>
     <dialog v-show="popUpOpen" class="dialog">
       <h1>Tak for dine data.</h1>
       <p>
@@ -31,17 +31,15 @@ export default {
       </p>
       <button @click="popUpOpen = false">OK</button>
     </dialog>
-    <img src="./assets/www.png" alt="www" width="500" />
+    <img src="./assets/www.png" alt="www" width="400" />
+    <h1>Nedtælling til næste snestorm - hvis ikke der er ryddet op inden</h1>
     <vue3-flip-countdown
       mainColor="#93dbf4"
       mainFlipBackgroundColor="#1f2f37"
       secondFlipBackgroundColor="#24343f"
       countdownSize="10rem"
-      deadlineISO="2022-01-13T07:00:00.000Z"
+      deadlineISO="2022-01-20T08:00:00.000Z"
     />
-  </div>
-  <div v-else>
-    <h1>Nothing yet</h1>
   </div>
 </template>
 
@@ -60,6 +58,13 @@ body {
 }
 .flip-clock {
   z-index: 99;
+}
+
+h1 {
+  color: #1f2f37;
+  font-size: 30px;
+  padding: 0 30px;
+  text-transform: uppercase;
 }
 
 .dialog{
