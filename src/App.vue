@@ -6,6 +6,7 @@
 
     const togglePopUp = ()=> {
       popUpOpen.value = false;
+      audio.play();
     }
 
     const startMusic = ()=> {
