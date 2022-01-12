@@ -1,8 +1,5 @@
-<script>
-import { onMounted, ref } from "vue";
-
-export default {
-  setup() {
+<script setup>
+    import { onMounted, ref } from "vue";
     const popUpOpen = ref(false);
 
     const popUp = () => {
@@ -14,11 +11,6 @@ export default {
     onMounted(() => {
       popUp();
     });
-    return {
-      popUpOpen
-    }
-  },
-};
 </script>
 
 <template> 
