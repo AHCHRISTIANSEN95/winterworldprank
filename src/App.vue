@@ -15,7 +15,7 @@
 
     setTimeout(() => {
       popUpOpen.value = true;
-    }, 3000);
+    }, 2000);
 
 </script>
 
